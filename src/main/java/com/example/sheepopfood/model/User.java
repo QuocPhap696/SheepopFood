@@ -21,7 +21,7 @@ public class User {
     private String email;
     private String phone;
     private String password;
-    @Column(nullable = false, columnDefinition = "boolean default true")
+//    @Column(nullable = false, columnDefinition = "boolean default true")
     private EUserRole role;
     private LocalDate openTime;
 

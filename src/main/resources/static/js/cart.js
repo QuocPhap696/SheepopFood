@@ -2,8 +2,8 @@
 const products = JSON.parse(localStorage.getItem("products"));
 
 
-const userId = 1;
-
+const userId = +document.getElementById("id_user").value;
+console.log(userId)
 
 const getAllProducts = () => {
     $.ajax({
@@ -11,7 +11,7 @@ const getAllProducts = () => {
         method: "GET",
     }).done((data) => {
         localStorage.setItem(`products`, JSON.stringify(data)),
-        localStorage.setItem(`cart_1`, JSON.stringify(data))
+        localStorage.setItem(`cart_${userId}`, JSON.stringify(data))
     })
 }
 
@@ -286,11 +286,10 @@ const renderTotal = (userId) => {
     billTotal.innerHTML="";
     const cart = getCart(userId);
     let total = 0;
-    cart.forEach(item => {
-        const quantity = document.getElementById(`quantity-${item.id}`).value;
-        total += item.price *quantity
+    cart.forEach(product => {
+        const quantity = document.getElementById(`quantity-${product.id}`).value;
+        total += product.price *quantity
     })
-
     billTotal.innerHTML= `<tr class="total-data">
                                 <td><strong>Subtotal: </strong></td>
                                 <td>${total}</td>
