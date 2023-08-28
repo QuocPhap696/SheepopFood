@@ -24,5 +24,7 @@ public class User {
     private boolean role;
     private LocalDate openTime;
 
-
+    public User(Integer id) {
+        this.id = id;
+    }
 }

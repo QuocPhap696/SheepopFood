@@ -16,8 +16,10 @@ public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+    private String image;
     private String name;
     private BigDecimal price;
+    private String description;
     @ManyToOne
     @JoinColumn(name = "id_user")
     private User user;
