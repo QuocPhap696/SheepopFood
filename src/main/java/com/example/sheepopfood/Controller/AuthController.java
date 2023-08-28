@@ -1,13 +1,10 @@
-package com.example.sheepopfood.Controller;
+package com.example.sheepopfood.controller;
 
-import com.example.sheepopfood.model.User;
-import com.example.sheepopfood.model.enums.EUserRole;
 import com.example.sheepopfood.service.AuthService;
 import com.example.sheepopfood.service.User.request.LoginRequest;
 import com.example.sheepopfood.service.User.request.RegisterRequest;
 import com.example.sheepopfood.service.User.request.UserSaveRequest;
 import com.example.sheepopfood.service.UserService;
-import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;

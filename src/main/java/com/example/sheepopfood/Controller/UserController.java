@@ -1,4 +1,4 @@
-package com.example.sheepopfood.Controller;
+package com.example.sheepopfood.controller;
 import com.example.sheepopfood.service.UserService;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Controller;
