@@ -5,6 +5,7 @@ import com.example.sheepopfood.model.Product;
 import com.example.sheepopfood.model.User;
 import com.example.sheepopfood.service.CategoryService;
 import com.example.sheepopfood.service.ProductService;
+import com.example.sheepopfood.service.UserService;
 import com.example.sheepopfood.service.request.ProductEditRequest;
 import com.example.sheepopfood.service.request.ProductSaveRequest;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,10 +33,12 @@ public class ProductAminAPI {
     private ResourceLoader resourceLoader;
     private final ProductService productService;
     private final CategoryService categoryService;
+    private final UserService userService;
 
-    public ProductAminAPI(ProductService productService, CategoryService categoryService) {
+    public ProductAminAPI(ProductService productService, CategoryService categoryService, UserService userService) {
         this.productService = productService;
         this.categoryService = categoryService;
+        this.userService = userService;
     }
 
     @GetMapping
@@ -70,7 +73,7 @@ public class ProductAminAPI {
         if (name.isEmpty() || categories.isEmpty()) {
             return ResponseEntity.badRequest().body("Name and category are required.");
         }
-        int userId = 1;
+        long userId = userService.getUser().getId();
         Resource resource = resourceLoader.getResource("classpath:/src/main/resources/static/assets/img/product_images");
         String templatePath = resource.getFile().getAbsolutePath();
         Path p = Paths.get(templatePath + File.separator + imgFile.getOriginalFilename());

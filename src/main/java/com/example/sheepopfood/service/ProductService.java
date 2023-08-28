@@ -2,7 +2,7 @@ package com.example.sheepopfood.service;
 
 import com.example.sheepopfood.model.Product;
 import com.example.sheepopfood.repository.ProductRepository;
-<<<<<<< HEAD
+
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -19,7 +19,7 @@ public class ProductService {
     public List<Product> fillAll() {
         return productRepository.findAll();
     }
-    public Product findById(int id) {
+    public Product findById(long id) {
         return productRepository.findById(id).orElse(null);
     }
 
@@ -30,7 +30,7 @@ public class ProductService {
         productRepository.save(product);
     }
 
-    public void deleteProduct(int productId) {
+    public void deleteProduct(long productId) {
         productRepository.deleteById(productId);
     }
 
@@ -38,18 +38,8 @@ public class ProductService {
 
         return productRepository.findByNameContainingOrCategory_Name(name, category_name);
     }
-=======
-import lombok.AllArgsConstructor;
-import org.springframework.stereotype.Service;
-
-import java.util.List;
-
-@Service
-@AllArgsConstructor
-public class ProductService {
-    public final ProductRepository productRepository;
     public List<Product> findAll(){
         return productRepository.findAll();
     }
->>>>>>> 7d284d52969053c5b3451448c36463f836563c98
+
 }

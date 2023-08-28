@@ -25,7 +25,7 @@ public class User {
     private EUserRole role;
     private LocalDate openTime;
 
-    public User(Integer id) {
+    public User(Long id) {
         this.id = id;
     }
 }

@@ -24,6 +24,6 @@ public class ProductAController {
     public String showListPage(Model model) {
         List<Product> products = productService.fillAll();
         model.addAttribute("products", products);
-        return "products/list";
+        return "productsAmin/list";
     }
 }
