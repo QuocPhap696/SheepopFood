@@ -9,6 +9,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
+<<<<<<< HEAD
 public interface ProductRepository extends JpaRepository<Product, Integer> {
 
 
@@ -17,4 +18,7 @@ public interface ProductRepository extends JpaRepository<Product, Integer> {
                 "WHERE p.name LIKE %:name% OR c.name LIKE %:category_name%")
         List<Product> findByNameContainingOrCategory_Name(String name, String category_name);
 
+=======
+public interface ProductRepository extends JpaRepository<Product, Long> {
+>>>>>>> 7d284d52969053c5b3451448c36463f836563c98
 }

@@ -2,6 +2,7 @@ package com.example.sheepopfood.service;
 
 import com.example.sheepopfood.model.Product;
 import com.example.sheepopfood.repository.ProductRepository;
+<<<<<<< HEAD
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -37,4 +38,18 @@ public class ProductService {
 
         return productRepository.findByNameContainingOrCategory_Name(name, category_name);
     }
+=======
+import lombok.AllArgsConstructor;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+
+@Service
+@AllArgsConstructor
+public class ProductService {
+    public final ProductRepository productRepository;
+    public List<Product> findAll(){
+        return productRepository.findAll();
+    }
+>>>>>>> 7d284d52969053c5b3451448c36463f836563c98
 }

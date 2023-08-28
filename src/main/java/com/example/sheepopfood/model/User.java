@@ -1,5 +1,6 @@
 package com.example.sheepopfood.model;
 
+import com.example.sheepopfood.model.enums.EUserRole;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -15,13 +16,13 @@ import java.time.LocalDate;
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Long id;
     private String fullName;
     private String email;
     private String phone;
     private String password;
-    @Column(nullable = false, columnDefinition = "boolean default true")
-    private boolean role;
+//    @Column(nullable = false, columnDefinition = "boolean default true")
+    private EUserRole role;
     private LocalDate openTime;
 
     public User(Integer id) {
